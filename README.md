@@ -1,2 +1,2 @@
-# kube-journey
+# Kube Journey ⚓️
 Repo for learning Kubernetes ⚓️🐳
