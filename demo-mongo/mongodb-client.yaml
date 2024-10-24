@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo-client-deployment
+  labels:
+    app: mongo-client
+  namespace: demo-mongo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongo-client-deployment
+  template:
+    metadata:
+      labels:
+        app: mongo-client-deployment
+    spec:
+      containers:
+        - name: mongo-client
+          image: mongo:4.4-bionic
+          env:
+            - name: mongo-client_INITDB_ROOT_USERNAME
+              value: "dummy"
+            - name: mongo-client_INITDB_ROOT_PASSWORD
+              value: "dummy"
